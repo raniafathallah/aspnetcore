@@ -38,7 +38,7 @@ namespace Microsoft.AspNetCore.Mvc.ViewFeatures
 
         public ComponentRendererTest()
         {
-             renderer = GetComponentRenderer();
+            renderer = GetComponentRenderer();
         }
 
         [Fact]
@@ -835,7 +835,7 @@ namespace Microsoft.AspNetCore.Mvc.ViewFeatures
                 new WebAssemblyComponentSerializer());
 
         private ViewContext GetViewContext(HttpContext context = null)
-        {           
+        {
             context ??= new DefaultHttpContext();
             context.RequestServices ??= _services;
             context.Request.Scheme = "http";
