@@ -1,8 +1,8 @@
 #!/bin/sh
 LC_ALL=C
 
-# Select files to format
-FILES=$(git show --name-only --pretty="")
+# Select files to format, ignoring broken, deleted, unmerged, and unknown files
+FILES=$(git show --diff-filter=bdux --name-only --pretty="")
 [ -z "$FILES" ] && exit 0
 
 # Format all selected files with dotnet-format
