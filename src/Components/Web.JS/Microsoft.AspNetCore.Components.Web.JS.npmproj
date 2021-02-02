@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <BuildOutputFiles Include="dist\release\blazor.server.js" />
-    <BuildOutputFiles Include="dist\release\blazor.webassembly.js" />
+    <BuildOutputFiles Include="dist\$(Configuration)\blazor.server.js" />
+    <BuildOutputFiles Include="dist\$(Configuration)\blazor.webassembly.js" />
   </ItemGroup>
 
   <ItemGroup>
