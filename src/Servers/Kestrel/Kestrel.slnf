@@ -7,7 +7,7 @@
       "src\\Servers\\Kestrel\\Core\\test\\Microsoft.AspNetCore.Server.Kestrel.Core.Tests.csproj",
       "src\\Servers\\Kestrel\\Kestrel\\src\\Microsoft.AspNetCore.Server.Kestrel.csproj",
       "src\\Servers\\Kestrel\\Kestrel\\test\\Microsoft.AspNetCore.Server.Kestrel.Tests.csproj",
-      "src\\Servers\\Kestrel\\perf\\Kestrel.Performance\\Microsoft.AspNetCore.Server.Kestrel.Performance.csproj",
+      "src\\Servers\\Kestrel\\perf\\Microbenchmarks\\Microsoft.AspNetCore.Server.Kestrel.Microbenchmarks.csproj",
       "src\\Servers\\Kestrel\\samples\\Http2SampleApp\\Http2SampleApp.csproj",
       "src\\Servers\\Kestrel\\samples\\LargeResponseApp\\LargeResponseApp.csproj",
       "src\\Servers\\Kestrel\\samples\\PlaintextApp\\PlaintextApp.csproj",
