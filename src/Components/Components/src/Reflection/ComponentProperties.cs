@@ -20,7 +20,7 @@ namespace Microsoft.AspNetCore.Components.Reflection
         private readonly static ConcurrentDictionary<Type, WritersForType> _cachedWritersByType
             = new ConcurrentDictionary<Type, WritersForType>();
 
-        public static void SetProperties(in ParameterView parameters, object target)
+        public static void SetProperties(in ParameterView parameters, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties | DynamicallyAccessedMemberTypes.NonPublicProperties)] object target)
         {
             if (target == null)
             {
@@ -217,7 +217,7 @@ namespace Microsoft.AspNetCore.Components.Reflection
         }
 
         [DoesNotReturn]
-        private static void ThrowForMultipleCaptureUnmatchedValuesParameters(Type targetType)
+        private static void ThrowForMultipleCaptureUnmatchedValuesParameters([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties | DynamicallyAccessedMemberTypes.NonPublicProperties)] Type targetType)
         {
             // We don't care about perf here, we want to report an accurate and useful error.
             var propertyNames = targetType
@@ -249,7 +249,7 @@ namespace Microsoft.AspNetCore.Components.Reflection
             private readonly Dictionary<string, PropertySetter> _underlyingWriters;
             private readonly ConcurrentDictionary<string, PropertySetter?> _referenceEqualityWritersCache;
 
-            public WritersForType(Type targetType)
+            public WritersForType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties | DynamicallyAccessedMemberTypes.NonPublicProperties)] Type targetType)
             {
                 _underlyingWriters = new Dictionary<string, PropertySetter>(StringComparer.OrdinalIgnoreCase);
                 _referenceEqualityWritersCache = new ConcurrentDictionary<string, PropertySetter?>(ReferenceEqualityComparer.Instance);

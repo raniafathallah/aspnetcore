@@ -100,7 +100,7 @@ namespace Microsoft.AspNetCore.Components
         /// <param name="defaultValue">The default value to return if no such parameter exists in the collection.</param>
         /// <returns>The parameter value if found; otherwise <paramref name="defaultValue"/>.</returns>
         public TValue GetValueOrDefault<TValue>(string parameterName, TValue defaultValue)
-            => TryGetValue<TValue>(parameterName, out TValue result) ? result : defaultValue;
+            => TryGetValue<TValue>(parameterName, out TValue? result) ? result : defaultValue;
 
         /// <summary>
         /// Returns a dictionary populated with the contents of the <see cref="ParameterView"/>.
@@ -232,7 +232,7 @@ namespace Microsoft.AspNetCore.Components
         /// match the corresponding entry in the <see cref="ParameterView"/>.
         /// </summary>
         /// <param name="target">An object that has a public writable property matching each parameter's name and type.</param>
-        public void SetParameterProperties(object target)
+        public void SetParameterProperties([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties | DynamicallyAccessedMemberTypes.NonPublicProperties)] object target)
         {
             if (target is null)
             {
